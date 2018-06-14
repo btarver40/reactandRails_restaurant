@@ -3,6 +3,7 @@ import React from 'react'
 class MenuForm extends React.Component {
   defaultValues ={option: ''}
   state = {...this.defaultValues}
+  // write out defaultValues so we dont have to write each value out separately(if we have multiple values)
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -16,23 +17,20 @@ class MenuForm extends React.Component {
     this.setState({[option]: value})
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  render() {
+    const {option} = this.state
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <input
+          name="option"
+          placeholder="Option"
+          value={option}
+          onChange={this.handleChange}
+          required
+        />
+      </form>
+    )
+  }
 }
+
+export default MenuForm;

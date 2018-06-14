@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 
 
 const styles = {
@@ -13,14 +13,16 @@ const styles = {
 
 
 const NavBar = () => (
+  <div className="navbar">
   <nav>
     <NavLink exact activeStyle={styles.active} to="/">Home</NavLink>
     {' '}
     <NavLink activeStyle={styles.active} to="/menu">Menu</NavLink>
   </nav>
+  </div>
 )
 
-export default NavBar;
+export default withRouter(NavBar);
 
 
 // I have a const because I am not calling state

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+// import MenuForm from './MenuForm'
 
 class Menu extends React.Component {
   state = {dishes: [], menuName: ''}
@@ -18,7 +19,6 @@ class Menu extends React.Component {
 
   render() {
     const { dishes } = this.state;
-    //debugger
     return (
         <div>
         <h1>{this.state.menuName}</h1>
